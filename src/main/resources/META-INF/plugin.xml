@@ -1,0 +1,54 @@
+<!-- IntelliJ Plugin Configuration -->
+<idea-plugin>
+    <!-- Unique Plugin Identifier -->
+    <id>com.analyzerPlug.IDE_Plugin</id>
+
+    <!-- Plugin Name -->
+    <name>AI Code Analyzer</name>
+
+    <!-- Vendor Information -->
+    <vendor email="anukulmaurya18@gmail.com">AK</vendor>
+
+    <!-- Plugin Description -->
+    <description><![CDATA[
+        AI-powered code analysis plugin for IntelliJ IDEA.
+    ]]></description>
+
+    <!-- Plugin Compatibility -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <!-- ✅ Registering Plugin Extensions -->
+    <extensions defaultExtensionNs="com.intellij">
+
+
+        <!-- ✅ Fixed Notification Group -->
+        <notificationGroup id="ai_code_analysis" displayType="BALLOON"/>
+
+        <!-- ✅ Register Application Services -->
+        <applicationService serviceImplementation="NotificationUtil"/>
+        <applicationService serviceImplementation="LLMApiClient"/>
+        <applicationService serviceImplementation="ProjectScanner"/>
+
+    </extensions>
+
+    <!-- ✅ Register Actions (Placed Outside Extensions) -->
+    <actions>
+        <action id="com.analyzerPlug.CodeAnalyzerAction"
+                class="CodeAnalyzerAction"
+                text="Run AI Code Analysis">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <action id="com.analyzerPlug.ApplyFixAction"
+                class="ApplyFixAction"
+                text="Apply AI Fixes">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+    </actions>
+
+    <!-- Plugin Versioning & Compatibility -->
+    <idea-version since-build="232" until-build="242.*"/>
+</idea-plugin>
