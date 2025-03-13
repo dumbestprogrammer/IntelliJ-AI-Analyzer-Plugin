@@ -1,3 +1,11 @@
+## License
+[![AGPL-3.0 License](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+
+This project is licensed under the **GNU AGPL-3.0 License** © 2025-2027 Anukul Kumar. See [LICENSE](./LICENSE) for more information.
+
+<hr>
+
+
 # AI Code Analyzer - IntelliJ Plugin
 A powerful AI-powered code analysis plugin for IntelliJ IDEA.
 <br>
