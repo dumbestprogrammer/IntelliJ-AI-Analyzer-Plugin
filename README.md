@@ -1,12 +1,14 @@
-## License
-[![AGPL-3.0 License](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
-
-This project is licensed under the **GNU AGPL-3.0 License** © 2025-2027 Anukul Kumar. See [LICENSE](./LICENSE) for more information.
+[![AGPL-3.0 License](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html) This project is licensed under the **GNU AGPL-3.0 License** © 2025-2027 Anukul Kumar. See [LICENSE](./LICENSE) for more information.
 
 <hr>
 
+<br>
+
 
 # AI Code Analyzer - IntelliJ Plugin
+AI Code Analyzer is a private IntelliJ IDEA plugin that uses AI (Large Language Models like OpenAI) to analyze Java code, detect issues such as syntax errors, logical mistakes, and best practice violations, and suggest fixes. <br>
+It integrates seamlessly into the IDE, allowing developers to enhance code quality without leaving their workspace.
+<!--
 A powerful AI-powered code analysis plugin for IntelliJ IDEA.
 <br>
 
@@ -14,30 +16,45 @@ A powerful AI-powered code analysis plugin for IntelliJ IDEA.
 - AI Code Analyzer is a full-fledged IntelliJ plugin that integrates **Large Language Models (LLMs)** to analyze Java code, detect issues, and suggest fixes. 
 - It helps developers identify syntax errors, formatting inconsistencies, and potential bugs without leaving the IDE.
 
-<br>
-
+<br> 
+--> 
+<!--
 ## > Features
 - **AI-Powered Code Analysis -** Scans Java files and detects syntax errors, logical mistakes, and best practice violations.
 - **Issue Highlighting -** Categorizes issues into errors, warnings, and suggestions.
 - **Fix Suggestions -** Provides context-aware fixes for detected issues.
 - **IntelliJ IDE Integration -** Runs as a tool inside IntelliJ.
 - **On-Demand Analysis -** Manually trigger analysis via the Tools menu.
+-->
+<br>
 
+## Key Features
+- **AI-Powered Code Analysis:** Scans Java files for issues like syntax errors and code smells.
+- **Issue Categorization:** Classifies issues into errors, warnings, and suggestions.
+- **Fix Suggestions:** Provides actionable fixes for detected problems.
+- **On-Demand Analysis:** Trigger analysis manually via the Tools menu, Runs as a tool inside IntelliJ.
 
 <br>
 
 
-## > Usage
-### 1. Open any Java project in IntelliJ IDEA.
-### 2. Go to Tools → Run AI Code Analysis.
-### 3. The AnalysisResultsDialog will display issues and suggested fixes.
+## Usage(Conceptual)
+1. Open any Java project in IntelliJ IDEA.
+2. Go to Tools → **Run AI Code Analysis**
+3. The AnalysisResultsDialog will display issues and suggested fixes.
 
-
-<br>
 <br>
 
 
-## > Technical Details
+## Architecture Overview
+The plugin is built using the IntelliJ Platform SDK and integrates with an LLM API (e.g., OpenAI). Key components include:
+- **CodeAnalyzerAction:** Triggers the analysis process.
+- **ProjectScanner:** Identifies Java files in the project.
+- **LLMApiClient:** Handles communication with the LLM API.
+- **LLMResponseParser:** Converts API responses into structured issues.
+- **AnalysisResultsDialog:** Displays issues and fixes in the UI.
+
+<!--
+> Technical Details
 ### Core Components
 
 - **CodeAnalyzerAction.java -** Handles action triggering.
@@ -45,10 +62,10 @@ A powerful AI-powered code analysis plugin for IntelliJ IDEA.
 - **LLMResponseParser.java -** Parses AI responses into structured issues.
 - **AnalysisResultsDialog.java -** Displays issues in a UI dialog.
 - **ProjectScanner.java -** Scans project files for analysis.
-
+-->
 <br>
 
-## > Tech Stack
+## Tech Stack
 - **Language:** Java
 - **Framework:** IntelliJ Platform SDK
 - **Build Tool:** Gradle
@@ -58,6 +75,7 @@ A powerful AI-powered code analysis plugin for IntelliJ IDEA.
 
 <br>
 
+<!--
 ## 📌 Class-by-Class Breakdown
 
 ### 🔹 1. Issue.java (Defines a single issue found in the code)
@@ -258,65 +276,75 @@ This class manages IntelliJ notifications:
 - If errors occur, `NotificationUtil.showError()` alerts the user.
 
 <br>
+
+-->
 <br>
 
 
 ## 📸 Demo
 
-- IntelliJ Plugin Marketplace
-![my Plugin on marketplace](https://github.com/user-attachments/assets/7b8c3e2b-1a35-4328-8a8f-06e78af01039)
+- IntelliJ Plugin Marketplace ![my Plugin on marketplace](https://github.com/user-attachments/assets/7b8c3e2b-1a35-4328-8a8f-06e78af01039)
 
 <br>
 
-- A small code with errors.
+<br>
 
-![error code -2 but small](https://github.com/user-attachments/assets/bff4b676-59a1-465c-b225-82bdde91f739)
+
+- A small code with errors. ![error code -2 but small](https://github.com/user-attachments/assets/bff4b676-59a1-465c-b225-82bdde91f739)
 
 <br>
+
+<br>
+
 
 - I clicked my AI plugin on the tools menu to use it.
-
-![tool window step-1](https://github.com/user-attachments/assets/1e5fd417-18ed-4cad-bef1-c92650468c09)
-
-<br>
-
-- Analysis begins.
-
-![code analysis begins](https://github.com/user-attachments/assets/ad78e5a2-e589-4986-a0f2-f533473f76f8)
+- ![tool window step-1](https://github.com/user-attachments/assets/1e5fd417-18ed-4cad-bef1-c92650468c09)
 
 <br>
 
-- Errors were displayed for that piece of code.
+<br>
 
-![errors display for code-2](https://github.com/user-attachments/assets/23b25195-dc77-4765-8870-14e967991a11)
+- Analysis begins - ![code analysis begins](https://github.com/user-attachments/assets/ad78e5a2-e589-4986-a0f2-f533473f76f8)
 
 <br>
 
-- Code full or errors.
+<br>
 
-![error code -1](https://github.com/user-attachments/assets/e600febe-4d3f-4674-aacd-8101330315bc)
+- Errors were displayed for that piece of code. ![errors display for code-2](https://github.com/user-attachments/assets/23b25195-dc77-4765-8870-14e967991a11)
 
 <br>
 
-- Different types of errors were categorized.
+<br>
 
-![shows errors for code-1](https://github.com/user-attachments/assets/622c89cc-11a4-4f50-8f6f-af951b4ad854)
+- Code full or errors. ![error code -1](https://github.com/user-attachments/assets/e600febe-4d3f-4674-aacd-8101330315bc)
 
 <br>
 
-- On expanding, you can see all the errors that are listed.
+<br>
 
-![expande errors for code -1](https://github.com/user-attachments/assets/fb97ca4b-f890-478e-9047-0bf61e77d677)
+
+- Different types of errors were categorized. ![shows errors for code-1](https://github.com/user-attachments/assets/622c89cc-11a4-4f50-8f6f-af951b4ad854)
 
 <br>
 
-- An error-free code and no issues/errors at all.
+<br>
 
-![error free code -3+ no issues found](https://github.com/user-attachments/assets/dbeabe65-5fba-4f9c-8938-da036e3be0f5)
+- On expanding, you can see all the errors that are listed. ![expande errors for code -1](https://github.com/user-attachments/assets/fb97ca4b-f890-478e-9047-0bf61e77d677)
 
 <br>
+
+<br>
+
+- An error-free code and no issues/errors at all. ![error free code -3+ no issues found](https://github.com/user-attachments/assets/dbeabe65-5fba-4f9c-8938-da036e3be0f5)
+
+<br>
+
+<br>
+
 
 - ![no issues found](https://github.com/user-attachments/assets/d9c2091d-b208-49d9-be4f-659b68ba237a)
+
+<br>
 
 <br>
 
@@ -339,18 +367,18 @@ https://github.com/user-attachments/assets/6d36f256-58a0-48bd-a006-3684cdc3d7d1
 
 <br>
 
-<hr>
-
-## > Why It’s Not on JetBrains Marketplace
-**Since the plugin relies on an AI model and API calls, maintaining a public version would require constant API credits.**
-<br>
-
-**To avoid unmanageable costs, I’ve kept it private for now.**
-
 <br>
 
 
+## Why It’s Not on JetBrains Marketplace
+Since the plugin relies on an AI model and API calls, maintaining a public version would require constant API credits.
+<br>
+To avoid unmanageable costs, I’ve kept it private for now.
 
+<br>
+
+
+<!--
 ## 🔹 Closing Statement for GitHub README
 This repository showcases the architecture, design, and implementation details of an AI-powered IntelliJ plugin for Java code analysis. <br>
 While the core structure and logic are provided, some internal mechanisms have been omitted for brevity.
@@ -373,6 +401,12 @@ I am currently working on new features to enhance the plugin’s capabilities. O
 <br>
 
 For now, this serves as a demonstration of my ability to build a full-fledged IntelliJ plugin that integrates LLMs for advanced static analysis. If you're interested in learning more, feel free to reach out!
+-->
+
+## What's Included in This Repository
+- High-level architecture and design explanations.
+- Sample code snippets for key components.
+- Insights into integrating LLMs with IntelliJ plugins.
 
 <br>
 
